@@ -29,8 +29,8 @@ function DetailComp(props){
         <Form className={styles.detailForm} onSubmit={formik.handleSubmit}>
                 <Form.Row>
                     <Form.Group as={Col}>
-                    <Form.Label>{t('DetailForm.FName')}</Form.Label>
-                    <Form.Control id="firstName" name="firstName" type="text" placeholder={t('DetailForm.FName')} onChange={formik.handleChange} value={formik.values.firstName}/>
+                        <Form.Label>{t('DetailForm.FName')}</Form.Label>
+                        <Form.Control id="firstName" name="firstName" type="text" placeholder={t('DetailForm.FName')} onChange={formik.handleChange} value={formik.values.firstName}/>
                     </Form.Group>
 
                     <Form.Group as={Col}>

@@ -11,6 +11,7 @@ class Questionaire extends Component{
         this.setState(prevState=>({
             indexOfQuestion:prevState.indexOfQuestion++
         }));
+        console.log(this.state.indexOfQuestion,'index of question');
     }
     onClickingBack=()=>{
         if(this.state.indexOfQuestion>0){

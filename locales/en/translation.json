@@ -1,0 +1,40 @@
+{
+    "Heading":{
+        "covid":"COVID Questionnaire"
+    },
+    "Question1":{
+        "question":"Have you done any international travel in the last 1 month?",
+        "Yes":"Yes",
+        "No":"No"
+    },
+    "Question2":{
+        "question":"Have you had close contact with or cared for someone diagnosed with COVID-19 within the last 14 days?",
+        "Yes":"Yes",
+        "No":"No"
+    },
+    "Question3":{
+        "question":"Have you travelled inter-state in last 1 month?",
+        "Yes":"Yes",
+        "No":"No"
+    },
+    "Question4":{
+        "question":"Are you experiencing any of these symptoms?",
+        "Fever":"Fever",
+        "Cough":"Cough",
+        "DifficultyInBreathe":"Difficulty in Breathing",
+        "None":"None of the above"
+    },
+    "DetailForm":{
+        "FName":"First Name",
+        "LName":"Last Name",
+        "Gender":"Gender",
+        "Male":"Male",
+        "Female":"Female",
+        "Other":"Other",
+        "Temperature":"Temperature",
+        "Address":"Address",
+        "State":"State",
+        "District":"District",
+        "Village":"Town/Village"
+    }
+}

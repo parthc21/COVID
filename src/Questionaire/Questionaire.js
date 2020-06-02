@@ -9,14 +9,14 @@ class Questionaire extends Component{
     }
     onClickingNext=()=>{
         this.setState(prevState=>({
-            indexOfQuestion:prevState.indexOfQuestion++
+            indexOfQuestion:prevState.indexOfQuestion+1
         }));
         console.log(this.state.indexOfQuestion,'index of question');
     }
     onClickingBack=()=>{
         if(this.state.indexOfQuestion>0){
             this.setState(prevState=>({
-                indexOfQuestion:prevState.indexOfQuestion--
+                indexOfQuestion:prevState.indexOfQuestion-1
             }));
         }
     }

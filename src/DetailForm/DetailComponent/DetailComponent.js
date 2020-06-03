@@ -88,7 +88,7 @@ function DetailComp(props){
                     <Form.Control id="village" name="village" type="text" placeholder="Town/Village" onChange={formik.handleChange} value={formik.values.village}/>
                     </Form.Group>
                 </Form.Row>
-
+                
                 <Button className={styles.detailFormButton} type="submit"variant="primary">
                     Submit
                 </Button>

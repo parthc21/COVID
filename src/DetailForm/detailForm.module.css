@@ -6,4 +6,7 @@
 
 .detailFormButton{
     background-color: #98db98;
+    border: none;
+    text-align: center;
+    display: inline-block;
 }

@@ -10,3 +10,14 @@
     text-align: center;
     display: inline-block;
 }
+
+.validationError{
+    color: crimson;
+    font-size: 14px;
+}
+
+
+.validationAsterisk{
+    color: crimson;
+    font-size: 18px;
+}

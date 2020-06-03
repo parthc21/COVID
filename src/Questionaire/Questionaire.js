@@ -14,17 +14,15 @@ class Questionaire extends Component{
         console.log(this.state.indexOfQuestion,'index of question');
     }
     onClickingBack=()=>{
-        if(this.state.indexOfQuestion>0){
-            this.setState(prevState=>({
-                indexOfQuestion:prevState.indexOfQuestion-1
-            }));
-        }
+        this.setState(prevState=>({
+            indexOfQuestion:prevState.indexOfQuestion-1
+        }));
     }
     render(){
         return(
             <>
             <ProgressBar now={(this.state.indexOfQuestion+1)*100/4} className={styles.questionaireBody}/>
-            <Question indexOfQuestion={this.state.indexOfQuestion} onClickingNext={this.onClickingNext}/>
+            <Question indexOfQuestion={this.state.indexOfQuestion} onClickingNext={this.onClickingNext} onClickingBack={this.onClickingBack}/>
             </>
         )
     }

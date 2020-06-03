@@ -12,8 +12,6 @@ class detailForm extends Component {
         districtDisplay:[],
         selectedGender:''
     }
-    componentWillMount(){
-    }
 
     getSelectedState=(value)=>{
         const stateValue= value.target.value

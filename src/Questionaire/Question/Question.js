@@ -34,10 +34,10 @@ function Question(props){
         buttonValue=<Button variant="primary" onClick={props.onClickingNext}>Next</Button>
     }
     else{
-        buttonValue=<><Button variant="primary" onClick={props.onClickingBack}>
-                        Back
-                    </Button>
-                    <Button variant="primary" onClick={props.onClickingNext}>Next</Button></>
+        buttonValue=<>
+                    <Button variant="primary" onClick={props.onClickingBack}>Back</Button>
+                    <Button variant="primary" onClick={props.onClickingNext}>Next</Button>
+                    </>
     }
     return(
         <div className={styles.question}>

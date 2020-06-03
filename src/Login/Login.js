@@ -24,7 +24,7 @@ class Login extends Component {
         console.log(window.innerHeight, window.innerWidth,"<<<<<<<<<<<<<")
 
         let displayObejct=""
-        if(window.innerWidth< 400){
+        if(window.innerWidth< 600){
             displayObejct=" d-flex flex-column"
         }else{
             displayObejct=" d-flex justify-content-around"

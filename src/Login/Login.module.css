@@ -31,7 +31,7 @@
 @media only screen and (max-width: 600px) {
     /* For tablets: */
     .loginContent{
-        width: 200px;
+        width: 250px;
         margin:16px;
     }
     .loginImage{

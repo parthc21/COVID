@@ -1,6 +1,6 @@
 {
     "Heading":{
-        "covid":"COVID Questionnaire"
+        "covid":"COVID"
     },
     "Question1":{
         "question":"Have you done any international travel in the last 1 month?",
@@ -36,5 +36,10 @@
         "State":"State",
         "District":"District",
         "Village":"Town/Village"
+    },
+    "Login":{
+        "Login":"Login",
+        "EnterId":"Email Id",
+        "Password":"Password"
     }
 }

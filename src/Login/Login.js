@@ -10,6 +10,7 @@ import {withRouter, Redirect} from "react-router-dom";
 import { AuthContext } from '../Auth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Translation } from 'react-i18next';
 
 
 class Login extends Component {
@@ -28,6 +29,7 @@ class Login extends Component {
         }else{
             displayObejct=" d-flex justify-content-around"
         }
+        console.log(this.props,'props>>>>>>>>>');
         return(
             <div>
                 <Formik
@@ -65,9 +67,17 @@ class Login extends Component {
                             <div className={displayObejct}>
                                 <img className={style.loginImage} alt="Logo"src={require("../Hand-holding-clipboard-with-ch_blog-768x403.jpg")}/>
                                 <div className={style.loginContent}>
-                                    <h4>Login</h4>
+                                    <Translation>
+                                        {
+                                            (t, { i18n }) => <h4>{t("Login.Login")}</h4>
+                                        }
+                                    </Translation>
                                     <Form.Label>
-                                        Please enter a User Id
+                                        <Translation>
+                                            {
+                                                (t, { i18n }) => <h6>{t("Login.EnterId")}</h6>
+                                            }
+                                        </Translation>
                                     </Form.Label>
                                     <Form.Control type="text" 
                                                 placeholder="User ID" 
@@ -78,7 +88,11 @@ class Login extends Component {
                                                 value={props.values.id} />
                                     
                                     <Form.Label>
-                                        Enter the password
+                                        <Translation>
+                                            {
+                                                (t, { i18n }) => <h6>{t("Login.Password")}</h6>
+                                            }
+                                        </Translation>
                                     </Form.Label>
                                     <Form.Control type="password" 
                                                 placeholder="Password" 
@@ -90,7 +104,13 @@ class Login extends Component {
                                     
                                     {props.errors.name && <div id="feedback">{props.errors.name}</div>}
 
-                                    <Button className={style.buttonStyle} type="submit" size="sm">Login</Button>
+                                    <Button className={style.buttonStyle} type="submit" size="sm">
+                                    <Translation>
+                                            {
+                                                (t, { i18n }) => <span>{t("Login.Login")}</span>
+                                            }
+                                        </Translation>
+                                    </Button>
                                 </div>
                             </div>
                             </Jumbotron>
@@ -103,4 +123,4 @@ class Login extends Component {
     }
 }
 
-export default withRouter(Login)    
+export default withRouter(Login)

@@ -12,3 +12,46 @@
 .buttonStyle{
     margin-top: 16px;
 }
+
+.loginImage{
+    height: 250px;
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .loginContent{
+        width: 300px;
+    }
+    .loginImage{
+        height: 200px;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    /* For tablets: */
+    .loginContent{
+        width: 200px;
+        margin:16px;
+    }
+    .loginImage{
+        height: 150px;
+    }
+    .loginForm{
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (max-height: 700px) {
+    /* For tablets: */
+    .loginContent{
+        width: 200px;
+        margin:16px;
+    }
+    .loginImage{
+        height: 150px;
+    }
+    .loginForm{
+        margin-top: 24px;
+    }
+}

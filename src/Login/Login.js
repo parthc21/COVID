@@ -3,6 +3,7 @@ import { Component } from 'react';
 import { Formik } from 'formik';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Jumbotron from 'react-bootstrap/Jumbotron'
 import style from './Login.module.css'
 import app from '../base';
 import {withRouter, Redirect} from "react-router-dom";
@@ -18,6 +19,14 @@ class Login extends Component {
     render(){
         if(this.context.currentUser){
             return <Redirect to="/"/>
+        }
+        console.log(window.innerHeight, window.innerWidth,"<<<<<<<<<<<<<")
+
+        let displayObejct=""
+        if(window.innerWidth< 400){
+            displayObejct=" d-flex flex-column"
+        }else{
+            displayObejct=" d-flex justify-content-around"
         }
         return(
             <div>
@@ -52,8 +61,9 @@ class Login extends Component {
                     <div className={ 'd-flex justify-content-center'}>
                         <ToastContainer />
                         <Form className={style.loginForm}  onSubmit={props.handleSubmit}>
-                            <div className="d-flex justify-content-around">
-                                <img  alt="Logo"src={require("../logo.svg")}/>
+                            <Jumbotron fluid>
+                            <div className={displayObejct}>
+                                <img className={style.loginImage} alt="Logo"src={require("../Hand-holding-clipboard-with-ch_blog-768x403.jpg")}/>
                                 <div className={style.loginContent}>
                                     <h4>Login</h4>
                                     <Form.Label>
@@ -83,6 +93,7 @@ class Login extends Component {
                                     <Button className={style.buttonStyle} type="submit" size="sm">Login</Button>
                                 </div>
                             </div>
+                            </Jumbotron>
                         </Form>
                     </div>
                 )}

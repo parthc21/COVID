@@ -40,8 +40,8 @@ function CustomNavbar(props){
           </Button>
         </div>
         </Navbar>
-        <Navbar variant="dark" bg="light" fixed="bottom">
-            copyrights
+        <Navbar className="d-flex justify-content-center" variant="dark" bg="light" fixed="bottom">
+          Copyright © 2020
         </Navbar>
       </>
   )

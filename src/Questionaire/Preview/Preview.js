@@ -2,10 +2,11 @@ import React from 'react'
 import {useTranslation} from 'react-i18next';
 import styles from './Preview.module.css';
 import Jumbotron from 'react-bootstrap/Jumbotron';
+import Button from 'react-bootstrap/Button';
 
 function PreviewComp(props){
-    console.log(props.questions);
     const {t} =useTranslation();
+
     return(
         <div className={styles.previewBody}>
             <Jumbotron>
@@ -18,6 +19,9 @@ function PreviewComp(props){
                 </div>
             ))
             }
+            <div className="d-flex justify-content-center">
+                <Button variant="primary" onClick={props.onSubmitButton}>Submit</Button>
+            </div>
             </Jumbotron>
         </div>
     )

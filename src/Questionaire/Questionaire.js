@@ -3,6 +3,9 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import styles from './Questionaire.module.css';
 import Question from './Question/Question';
 import PreviewComp from './Preview/Preview'
+import {PreviewEvent} from './Preview/PreviewEvent';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class Questionaire extends Component{
     state={
@@ -32,6 +35,18 @@ class Questionaire extends Component{
         }
 
     }
+    onSubmitButton=()=>{
+        toast.success('Entry Successfull', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        PreviewEvent.setquestionData(this.state.questions);
+    }
     onClickingBack=()=>{
         this.setState(prevState=>({
             indexOfQuestion:prevState.indexOfQuestion-1
@@ -41,10 +56,11 @@ class Questionaire extends Component{
     render(){
         return(
             <>
+            <ToastContainer />
             {!this.state.preview?<>
             <ProgressBar now={(this.state.indexOfQuestion+1)*100/4} className={styles.questionaireBody}/>
             <Question indexOfQuestion={this.state.indexOfQuestion} onClickingNext={this.onClickingNext} onClickingBack={this.onClickingBack}/></>
-            :<PreviewComp questions={this.state.questions}/>}
+            :<PreviewComp questions={this.state.questions} onSubmitButton={this.onSubmitButton}/>}
             </>
         )
     }

@@ -21,7 +21,6 @@ class Login extends Component {
         if(this.context.currentUser){
             return <Redirect to="/"/>
         }
-        console.log(window.innerHeight, window.innerWidth,"<<<<<<<<<<<<<")
 
         let displayObejct=""
         if(window.innerWidth< 600){

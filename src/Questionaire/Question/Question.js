@@ -5,7 +5,14 @@ import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import styles from './Question.module.css'
 import {useTranslation} from 'react-i18next';
+import { useFormik} from 'formik';
+import * as Yup from 'yup';
 
+
+const validationSchema = Yup.object().shape({
+    answer: Yup.string()
+      .required('Required'),
+  });
 function Question(props){
     const {t} =useTranslation();
 
@@ -30,32 +37,44 @@ function Question(props){
 
     let buttonValue='';
 
+    const formik= useFormik({
+        initialValues:{
+            question:'',
+            answer:'',
+        },
+        validationSchema,
+        onSubmit: values => {
+            values.question=questions[props.indexOfQuestion].question;
+            props.onClickingNext(values.question,values.answer);
+        },
+    })
     if(props.indexOfQuestion===0){
-        buttonValue=<Button variant="primary" onClick={props.onClickingNext}>Next</Button>
+        buttonValue=<Button variant="primary" onClick={()=>formik.handleSubmit()}>Next</Button>
     }
     else{
         buttonValue=<>
                     <Button variant="primary" onClick={props.onClickingBack}>Back</Button>
-                    <Button variant="primary" onClick={props.onClickingNext}>Next</Button>
+                    <Button variant="primary" onClick={()=>formik.handleSubmit()}>Next</Button>
                     </>
     }
     return(
         <div className={styles.question}>
             <Form>
             <Form.Label as="legend" column className="d-flex justify-content-start">
-                {/* <h4>{props.indexOfQuestion+1}. {questions[props.indexOfQuestion].question} </h4> */}
-                <h4>{props.indexOfQuestion+1}. {t(`Question${props.indexOfQuestion+1}.question`)} </h4>
+                <h5>{props.indexOfQuestion+1}. {t(`Question${props.indexOfQuestion+1}.question`)} </h5>
             </Form.Label>
             <Form.Group as={Row}>
                 <Col>
                 {questions[props.indexOfQuestion].answers.map((answer,index1)=>(
                     <Form.Check
-                    type="radio"
-                    label={t(`Question${props.indexOfQuestion+1}.${answer}`)}
-                    name="formHorizontalRadios"
-                    id="formHorizontalRadios1"
-                    className="d-flex justify-content-start"
-                    key={index1}
+                        type="radio"
+                        label={t(`Question${props.indexOfQuestion+1}.${answer}`)}
+                        value={answer}
+                        name="answer"
+                        id={answer}
+                        className="d-flex justify-content-start"
+                        key={index1+questions[props.indexOfQuestion].question}
+                        onChange={formik.handleChange}
                     />
                 ))}
                 </Col>

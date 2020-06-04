@@ -1,5 +1,17 @@
 import {Subject} from 'rxjs';
 
+
+// const userData={
+//     firstName:'',
+//     lastName:'',
+//     gender:'',
+//     temperature:'',
+//     address:'',
+//     state:'',
+//     district:'',
+//     village:'',
+//     submit:false
+// }
 export class detailEvent{
     static hasUserSubmit$ = new Subject();
 

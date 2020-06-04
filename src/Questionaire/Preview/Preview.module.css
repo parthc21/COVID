@@ -1,0 +1,39 @@
+.previewBody{
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding:32px;
+}
+.previewHeading{
+    margin-bottom: 32px;
+}
+.previewQues{
+    margin-bottom: 16px;
+}
+.previewAns{
+    margin-left: 24px;
+}
+
+@media only screen and (max-width: 500px) {
+    /* For tablets: */
+    .previewBody{
+        margin-left: 5%;
+        margin-right: 5%;
+        padding:24px;
+    }
+    .previewAns{
+        margin-left: 12px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    /* For tablets: */
+    .previewBody{
+        margin-left: 10%;
+        margin-right: 10%;
+        padding:24px;
+    }
+    .previewAns{
+        margin-left: 24px;
+    }
+}

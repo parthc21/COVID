@@ -47,7 +47,8 @@ function DetailComp(props){
         },
         validationSchema,
         onSubmit: values => {
-            detailEvent.sethasUserSubmit(true);
+            values.submit=true;
+            detailEvent.sethasUserSubmit(values);
         },
     })
     return (

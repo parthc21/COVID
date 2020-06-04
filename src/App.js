@@ -12,14 +12,16 @@ import PrivateRoute from './PrivateRoute';
 class App extends Component {
 
   state={
-    hasUserSubmit:false
+    hasUserSubmit:false,
+    userData:{}
   }
   constructor(props){
     super(props);
     detailEvent.hasUserSubmitObs$
       .subscribe((state)=>{
         this.setState({
-          hasUserSubmit:state
+          hasUserSubmit:state.submit,
+          userData:state
         });
       })
   }
@@ -31,7 +33,6 @@ class App extends Component {
       <Router>
       <div className="App">
         <Navbar hasUserSubmit={this.state.hasUserSubmit}></Navbar>
-        {/* {showModule} */}
         <PrivateRoute exact path="/" component={showModule}/>
         <Route exact path="/login" component={Login}/>
       </div>

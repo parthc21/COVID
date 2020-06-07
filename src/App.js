@@ -9,6 +9,9 @@ import Login from './Login/Login';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import {AuthProvider} from './Auth';
 import PrivateRoute from './PrivateRoute';
+import axios from 'axios';
+import { AuthContext } from './Auth';
+
 
 class App extends Component {
 
@@ -17,6 +20,8 @@ class App extends Component {
     userData:{},
     questionData:{}
   }
+  static contextType=AuthContext
+
   constructor(props){
     super(props);
     detailEvent.hasUserSubmitObs$
@@ -41,9 +46,18 @@ class App extends Component {
     console.log(this.state.questionData)
     setTimeout(
       ()=>{
-        this.setState({
-          hasUserSubmit:false
+        let objectData = {...this.state.userData,...this.state.questionData};
+        console.log(objectData,'Object Data>>>>>>>>>>>>>>')
+        axios.post(`https://covid-8d474.firebaseio.com/userdata.json`,objectData)
+          .then(response=>{
+            console.log(response);
+            this.setState({
+              hasUserSubmit:false
+            });
         })
+        .catch(response=>{
+            console.log(response);
+        });
       },
       5000
     )

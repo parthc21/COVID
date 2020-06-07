@@ -35,7 +35,7 @@
         "Address":"Address",
         "State":"State",
         "District":"District",
-        "Village":"Town/Village"
+        "Village":"Town"
     },
     "Login":{
         "Login":"Login",

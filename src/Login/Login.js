@@ -32,7 +32,7 @@ class Login extends Component {
         return(
             <div>
                 <Formik
-                initialValues={{ id: '', password:'' }}
+                initialValues={{ id: 'parthc21@gmail.com', password:'123456789' }}
                 onSubmit={(values, actions) => {
                     try{
                         app

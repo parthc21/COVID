@@ -39,6 +39,14 @@ class App extends Component {
     console.log('Firebase Data>>>>>>>>>>');
     console.log(this.state.userData);
     console.log(this.state.questionData)
+    setTimeout(
+      ()=>{
+        this.setState({
+          hasUserSubmit:false
+        })
+      },
+      5000
+    )
   }
 
   render(){

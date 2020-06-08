@@ -39,6 +39,7 @@
     },
     "Login":{
         "Login":"Login",
+        "SignUp":"Sign Up",
         "EnterId":"Email Id",
         "Password":"Password"
     }

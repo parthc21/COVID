@@ -39,7 +39,6 @@ class Login extends Component {
                             .auth()
                             .signInWithEmailAndPassword(values.id,values.password)
                             .then(response=>{
-                                console.log(response);
                                 this.props.history.push('/');
                             })
                             .catch(error=>{

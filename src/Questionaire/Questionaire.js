@@ -6,8 +6,10 @@ import PreviewComp from './Preview/Preview'
 import {PreviewEvent} from './Preview/PreviewEvent';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {AuthContext} from '../Auth';
 
 class Questionaire extends Component{
+    static contextType=AuthContext;
     state={
         indexOfQuestion:0,
         preview:false,
@@ -45,7 +47,14 @@ class Questionaire extends Component{
             draggable: true,
             progress: undefined,
         });
-        PreviewEvent.setquestionData(this.state.questions);
+        
+        
+        let val=this.context.currentUser.xa
+        let objectData={
+            currentToken:val,
+            questions:this.state.questions
+        }
+        PreviewEvent.setquestionData(objectData);
     }
     onClickingBack=()=>{
         this.setState(prevState=>({

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component,useContext } from 'react';
 import './App.css';
 import Navbar from './Navigation/Navigation'
 import DetailForm from './DetailForm/detailForm';
@@ -11,7 +11,7 @@ import {AuthProvider} from './Auth';
 import PrivateRoute from './PrivateRoute';
 import axios from 'axios';
 import { AuthContext } from './Auth';
-
+import app from './base'
 
 class App extends Component {
 
@@ -20,8 +20,9 @@ class App extends Component {
     userData:{},
     questionData:{}
   }
+  
   static contextType=AuthContext
-
+  
   constructor(props){
     super(props);
     detailEvent.hasUserSubmitObs$
@@ -34,23 +35,18 @@ class App extends Component {
       PreviewEvent.questionDataObs$
       .subscribe((state)=>{
         this.setState({
-          questionData:state
+          questionData:state.questions
         });
-        this.sendDataToFireBase();
+        this.sendDataToFireBase(state.currentToken);
       })
   }
 
-  sendDataToFireBase=()=>{
-    console.log('Firebase Data>>>>>>>>>>');
-    console.log(this.state.userData);
-    console.log(this.state.questionData)
+  sendDataToFireBase=(currentToken)=>{
     setTimeout(
       ()=>{
         let objectData = {...this.state.userData,...this.state.questionData};
-        console.log(objectData,'Object Data>>>>>>>>>>>>>>')
-        axios.post(`https://covid-8d474.firebaseio.com/userdata.json`,objectData)
+        axios.post(`https://covid-8d474.firebaseio.com/userdata.json?auth=${currentToken}`,objectData)
           .then(response=>{
-            console.log(response);
             this.setState({
               hasUserSubmit:false
             });
@@ -70,8 +66,8 @@ class App extends Component {
       <Router>
       <div className="App">
         <Navbar hasUserSubmit={this.state.hasUserSubmit}></Navbar>
-        <PrivateRoute exact path="/" component={showModule}/>
         <Route exact path="/login" component={Login}/>
+        <PrivateRoute exact path="/" component={showModule}/>
       </div>
       </Router>
       </AuthProvider>

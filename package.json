@@ -21,6 +21,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-signature-canvas": "^1.0.3",
     "react-toastify": "^6.0.5",
     "rxjs": "^6.5.5",
     "yup": "^0.29.1"

@@ -15,6 +15,7 @@ class Questionaire extends Component{
         preview:false,
         questions:[]
     }
+    sigPad = {}
     onClickingNext=(question,answer)=>{
         let tques=[...this.state.questions];
         let newVar={
@@ -66,10 +67,10 @@ class Questionaire extends Component{
         return(
             <>
             <ToastContainer />
-            {!this.state.preview?<>
+            {this.state.preview?<>
             <ProgressBar now={(this.state.indexOfQuestion+1)*100/4} className={styles.questionaireBody}/>
             <Question indexOfQuestion={this.state.indexOfQuestion} onClickingNext={this.onClickingNext} onClickingBack={this.onClickingBack}/></>
-            :<PreviewComp questions={this.state.questions} onSubmitButton={this.onSubmitButton}/>}
+            :<PreviewComp sigPad={this.sigPad} questions={this.state.questions} onSubmitButton={this.onSubmitButton}/>}
             </>
         )
     }

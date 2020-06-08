@@ -87,7 +87,7 @@ function DetailComp(props){
 
                     <Form.Group as={Col}>
                     <Form.Label>{t('DetailForm.Temperature')}<span className={styles.validationAsterisk}> *</span></Form.Label>
-                    <Form.Control id="temperature" name="temperature" type="number" placeholder={t('DetailForm.Temperature')} onChange={formik.handleChange} value={formik.values.temperature}/>
+                    <Form.Control id="temperature" name="temperature" step="any"  type="number" placeholder={t('DetailForm.Temperature')} onChange={formik.handleChange} value={formik.values.temperature}/>
                     {formik.errors.temperature && formik.touched.temperature ? (
                             <div className={styles.validationError}>{formik.errors.temperature}</div>
                         ) : null}

@@ -1,6 +1,7 @@
 {
     "Heading":{
-        "covid":"COVID"
+        "covid":"COVID",
+        "pms":"PatientRS"
     },
     "Question1":{
         "question":"Have you done any international travel in the last 1 month?",
@@ -24,6 +25,11 @@
         "DifficultyInBreathe":"Difficulty in Breathing",
         "None":"None of the above"
     },
+    "Question5":{
+        "question":"Are you a smoker?",
+        "Yes":"Yes",
+        "No":"No"
+    },
     "DetailForm":{
         "FName":"First Name",
         "LName":"Last Name",
@@ -31,11 +37,12 @@
         "Male":"Male",
         "Female":"Female",
         "Other":"Other",
-        "Temperature":"Temperature",
+        "Age":"Age",
         "Address":"Address",
         "State":"State",
         "District":"District",
-        "Village":"Town"
+        "Village":"Town",
+        "Occupation":"Occupation"
     },
     "Login":{
         "Login":"Login",

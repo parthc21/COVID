@@ -24,6 +24,11 @@
         "DifficultyInBreathe":"सांस लेने में कष्ट",
         "None":"इनमे से कोई भी नहीं"
     },
+    "Question5":{
+        "question":"क्या आप धूम्रपान करते हैं",
+        "Yes":"हाँ",
+        "No":"नहीं"
+    },
     "DetailForm":{
         "FName":"पहला नाम",
         "LName":"उपनाम",
@@ -31,11 +36,12 @@
         "Male":"पुरुष",
         "Female":"महिला",
         "Other":"अन्य",
-        "Temperature":"तापमान",
+        "Age":"आयु",
         "Address":"पता",
         "State":"राज्य",
         "District":"जिला",
-        "Village":"गाँव"
+        "Village":"गाँव",
+        "Occupation":"व्यवसाय"
     },
     "Login":{
         "Login":"लॉग इन करें",

@@ -19,7 +19,7 @@ const validationSchema = Yup.object().shape({
       .required('Required'),
     gender: Yup.string()
       .required('Required'),
-    temperature: Yup.string()
+    age: Yup.string()
       .required('Required'),
     address: Yup.string()
       .required('Required'),
@@ -28,6 +28,8 @@ const validationSchema = Yup.object().shape({
     district: Yup.string()
       .required('Required'),
     village: Yup.string()
+      .required('Required'),
+    occupation: Yup.string()
       .required('Required'),
   });
 
@@ -39,11 +41,12 @@ function DetailComp(props){
             firstName:'',
             lastName:'',
             gender:'',
-            temperature:'',
+            age:'',
             address:'',
             state:'',
             district:'',
-            village:''
+            village:'',
+            occupation:'',
         },
         validationSchema,
         onSubmit: values => {
@@ -86,10 +89,17 @@ function DetailComp(props){
                     </Form.Group>
 
                     <Form.Group as={Col}>
-                    <Form.Label>{t('DetailForm.Temperature')}<span className={styles.validationAsterisk}> *</span></Form.Label>
-                    <Form.Control id="temperature" name="temperature" step="any"  type="number" placeholder={t('DetailForm.Temperature')} onChange={formik.handleChange} value={formik.values.temperature}/>
-                    {formik.errors.temperature && formik.touched.temperature ? (
-                            <div className={styles.validationError}>{formik.errors.temperature}</div>
+                    <Form.Label>{t('DetailForm.Age')}<span className={styles.validationAsterisk}> *</span></Form.Label>
+                    <Form.Control id="age" name="age" step="any"  type="number" placeholder={t('DetailForm.Age')} onChange={formik.handleChange} value={formik.values.age}/>
+                    {formik.errors.age && formik.touched.age ? (
+                            <div className={styles.validationError}>{formik.errors.age}</div>
+                        ) : null}
+                    </Form.Group>
+                    <Form.Group as={Col}>
+                    <Form.Label>{t('DetailForm.Occupation')}<span className={styles.validationAsterisk}> *</span></Form.Label>
+                    <Form.Control id="occupation" name="occupation" type="text" placeholder={t('DetailForm.Occupation')} onChange={formik.handleChange} value={formik.values.occupation}/>
+                    {formik.errors.occupation && formik.touched.occupation ? (
+                            <div className={styles.validationError}>{formik.errors.occupation}</div>
                         ) : null}
                     </Form.Group>
                 </Form.Row>

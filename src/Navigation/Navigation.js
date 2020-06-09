@@ -28,7 +28,7 @@ function CustomNavbar(props){
               height="30"
               className="d-inline-block align-top"
             />{' '}
-            {t('Heading.covid')}
+            <b>{t('Heading.pms')}</b>
           </Navbar.Brand>
         <div>
           {props.hasUserSubmit?<Button className={styles.navbarButton} onClick={()=>goBackHome()}>Home</Button>:''}

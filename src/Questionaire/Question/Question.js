@@ -32,7 +32,11 @@ function Question(props){
         {
             question:"Are you experiencing any of these symptoms?",
             answers:["Fever","Cough","DifficultyInBreathe", "None"]
-        }
+        },
+        {
+            question:"Are you a Smoker?",
+            answers:["Yes","No"]
+        },
     ]
 
     let buttonValue='';

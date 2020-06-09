@@ -1,4 +1,4 @@
-import React, { Component,useContext } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Navbar from './Navigation/Navigation'
 import DetailForm from './DetailForm/detailForm';
@@ -11,7 +11,6 @@ import {AuthProvider} from './Auth';
 import PrivateRoute from './PrivateRoute';
 import axios from 'axios';
 import { AuthContext } from './Auth';
-import app from './base'
 
 class App extends Component {
 

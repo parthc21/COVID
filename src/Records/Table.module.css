@@ -1,0 +1,12 @@
+.tableContainer{
+    width:80%;
+    margin-left: 10%;
+}
+
+.printButton{
+    margin-top: 24px;
+    margin-left: 10%;
+    background-color:#98FB98 !important;
+    border:none !important;
+    color: black !important;
+}

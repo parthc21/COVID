@@ -11,6 +11,7 @@ import {AuthProvider} from './Auth';
 import PrivateRoute from './PrivateRoute';
 import axios from 'axios';
 import { AuthContext } from './Auth';
+import Table from './Records/Table'
 
 class App extends Component {
 
@@ -67,6 +68,7 @@ class App extends Component {
         <Navbar hasUserSubmit={this.state.hasUserSubmit}></Navbar>
         <Route exact path="/login" component={Login}/>
         <PrivateRoute exact path="/" component={showModule}/>
+        <PrivateRoute exact path="/table" component={Table}/>
       </div>
       </Router>
       </AuthProvider>

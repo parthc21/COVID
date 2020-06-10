@@ -1,12 +1,15 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import styles from './Navigation.module.css';
 import Button from 'react-bootstrap/Button';
 import {useTranslation} from 'react-i18next';
 import {detailEvent} from '../DetailForm/detailFormEvent'
+import {AuthContext} from "../Auth";
+import { useHistory } from "react-router-dom";
 
 function CustomNavbar(props){
-
+  const {currentUser}=useContext(AuthContext);
+  let history=useHistory();
   const { t, i18n } = useTranslation();
 
   function handleClick(lang){
@@ -15,6 +18,10 @@ function CustomNavbar(props){
 
   function goBackHome(){
     detailEvent.sethasUserSubmit(false);
+  }
+
+  function goToUserTable(){
+    history.push('/table')
   }
 
   return(
@@ -32,6 +39,11 @@ function CustomNavbar(props){
           </Navbar.Brand>
         <div>
           {props.hasUserSubmit?<Button className={styles.navbarButton} onClick={()=>goBackHome()}>Home</Button>:''}
+          {
+          currentUser?<Button className={styles.navbarButton} onClick={()=>goToUserTable('en')}>
+            Users
+          </Button>:''
+          }
           <Button className={styles.navbarButton} onClick={()=>handleClick('en')}>
             English
           </Button>
